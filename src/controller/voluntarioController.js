@@ -29,18 +29,18 @@ const getAll = (req, res) => {
 const updateVoluntario = async (req, res) => {
     try {
 
-         const {nome,
+        const {nome,
         contato,
         vagasDisponiveis,
         prestaçãoDeServiço,
          diasDaSemana,
          email,
          senha } = req.body
-        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.id, {
+        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.nome, {
          nome, contato,  vagasDisponiveis, diasDaSemana, email, senha, prestaçãoDeServiço
         })
-        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.id)
-            res.status(200).json(voluntarioUpdate)
+        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.nome)
+         return   res.status(200).json(voluntarioUpdate) 
 
     } catch (error) {
         console.error(error)
@@ -72,13 +72,12 @@ const loginDoVoluntario = (req, res) => {
         const senhaValida = bcrypt.compareSync(req.body.senha, voluntario.senha)
 
         if (!senhaValida) {
-
+            
             return res.status(403).send('Senha incorreta')
         }
-
         const token = jwt.sign({ email: req.body.email }, SECRET)
-       
         return res.status(200).send(token)
+
         
     })
 }

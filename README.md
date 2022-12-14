@@ -121,17 +121,9 @@ além de rotas de pessoas  que gostariam de ser volutarias,  como para dar aulas
 o gerenciamento de relacionamentos de dados e fornece validação de esquema para objetos do MongoDB.
 - **jest** :Framework de testes JavaScript
 
------------------------------------------------------------------------|
-| *Ok, implentações futuras sobre o o projeto serão feitas.            |
-|Gostaria de receber dicas, melhorias...*                              |
-|                                                                      |
-|                                                                      |
-|                                                                      |
-|                                                                      |
-|                                                                      |
-|                                                                      |
-|                                                                      |
-------------------------------------------------------------------------
+*Ok, implentações futuras sobre o o projeto serão feitas.            
+Gostaria de receber dicas, melhorias...*                              
+                                                               
 
 
 

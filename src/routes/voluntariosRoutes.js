@@ -6,5 +6,5 @@ router.get('/voluntarios', controller.getAll)
 router.post('/voluntario/create', controller.create)
 router.delete('/delete/:id', controller.deleteVoluntarioById)
 router.post('/voluntario/login', controller.loginDoVoluntario)
-router.patch('/voluntario/atualizar/:id', controller.updateVoluntario)
+router.patch('/voluntario/atualizar/:nome', controller.updateVoluntario)
 module.exports = router
