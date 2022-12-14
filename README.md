@@ -10,10 +10,10 @@ Projeto de Conclusão do Bootcamp de Back-end - Reprograma
 em lugares onde há alto indices de pobreza** - pois sabemos que
 está atrelada à piora da qualidade de vida das mesmas.
     E a solução pra esse problema é a Educação, e por que não com o ensino de programação?! 
-(considerada por muitos a profissão do futuro).Acredito que a **implentação desse ensino deste cedo
+(considerada por muitos a profissão do futuro).Acredito que a **implementação desse ensino deste cedo
  poderá mudar a vida dessas crianças monstrando para elas, que através da programação podemos não
  só digitar letrinhas coloridas no computador,muito mais do que isso: ensina  a pensar,
- desenvolver habilidades de resolução de problemas,pensamento crítico, e análitico, a desenvolver suas criatividades 
+ desenvolver habilidades de resolução de problemas, pensamento crítico, e análitico, a desenvolver suas criatividades 
 além de está aprendendo se divertindo.**
        Quando você observa como o mundo está se desenvolvendo, a codificação é uma habilidade  extremamente útil de se possuir.
  E Uma criança que aprende, como programar   terá uma vantagem na vida com mais oportunidades de emprego disponíveis para ela no futuro,
@@ -33,7 +33,7 @@ além de rotas de pessoas  que gostariam de ser volutarias,  como para dar aulas
 - [x] o cadastro, atualização, listar todos  login e exlusão de voluntarios
 
 ## Rotas
-
+---------------------------------------------------------------------------------
 | Rotas - comunidade             | Funções                                       |
 |--------------------------------|---------------------------------------------- |
 | GET-/comunidades               |  Lista  todas as comunidades                  |
@@ -42,8 +42,8 @@ além de rotas de pessoas  que gostariam de ser volutarias,  como para dar aulas
 | PATCH-/comunidade/atualizar/:id|  Faz atualizações de dados da comunidade por id                |
 | DELETE-/comunidade/deletar/:id |  Deleta por id                                |
 ----------------------------------------------------------------------------------
-
-| Rotas - volutarios                | Funções
+-----------------------------------------------------------------------------------
+| Rotas - volutarios                | Funções                                      |
 |-----------------------------------|----------------------------------------------|
 | GET-/volutarios                   | Acessa  todos os vonlutarios                 |
 | POST-/voluntario/create           | Cadastra um novo voluntario                  |
@@ -104,21 +104,35 @@ além de rotas de pessoas  que gostariam de ser volutarias,  como para dar aulas
 
 ## *Tecnologias, Frameworks e Bibliotecas usadas*
 
-- **JavaScript** (Linguagem de Programação)
-- **Node.js** (Ambiente de execução JavaScript)
-- **MongoDB** ( Banco de Dados)
-- **Postman** ( Plataforma colaborativa gratuita para criar, testar e documentar APIs.)
-- **Swagger** ( Aplicação open source que auxilia os desenvolvedores a definir, criar, documentar e consumir APIs REST)
-- **express** ( Framework para o desenvolvimento de aplicações JavaScript com o uso do Node.js)
-- **nodemon** ( Biblioteca que ajuda no desenvolvimento de sistemas com o Node.js reiniciando automaticamente o servidor)
-- **dotenv-safe** ( Pacote útil para gerenciarmos algumas variáveis de ambiente )
-- **cors** ( Mecanismo que usa cabeçalhos adicionais HTTP para informar a um navegador que permita que um aplicativo Web
- seja executado em uma origem (domínio) com permissão para acessar recursos selecionados de um servidor em uma origem distinta)
-- **bcrypt**( Método de criptografia do tipo hash para senhas)
-- **jwt** (Para autenticação, autorização e compartilhamento de informações.)
-- **mongoose**( Biblioteca de modelagem de dados de objeto, facilita 
-o gerenciamento de relacionamentos de dados e fornece validação de esquema para objetos do MongoDB.)
-- **jest** (Framework de testes JavaScript)
+- **JavaScript** :Linguagem de Programação
+- **Node.js** :Ambiente de execução JavaScript
+- **MongoDB** : Banco de Dados
+- **Postman** : Plataforma colaborativa gratuita para criar, testar e documentar APIs.
+- **Swagger** : Aplicação open source que auxilia os desenvolvedores a definir, criar, documentar e consumir APIs REST
+- **Render**  :cria e implanta automaticamente seu serviço toda vez que você envia para o repositório
+- **express** : Framework para o desenvolvimento de aplicações JavaScript com o uso do Node.js
+- **nodemon** : Biblioteca que ajuda no desenvolvimento de sistemas com o Node.js reiniciando automaticamente o servidor
+- **dotenv-safe** : Pacote útil para gerenciarmos algumas variáveis de ambiente 
+- **cors** : Mecanismo que usa cabeçalhos adicionais HTTP para informar a um navegador que permita que um aplicativo Web
+ seja executado em uma origem (domínio) com permissão para acessar recursos selecionados de um servidor em uma origem distinta
+- **bcrypt**: Método de criptografia do tipo hash para senhas
+- **jwt** :Para autenticação, autorização e compartilhamento de informações.
+- **mongoose**: Biblioteca de modelagem de dados de objeto, facilita 
+o gerenciamento de relacionamentos de dados e fornece validação de esquema para objetos do MongoDB.
+- **jest** :Framework de testes JavaScript
 
- *Ok, implentações futuras sobre o o projeto serão feitas. Gostaria de receber dicas, melhorias...*
+-----------------------------------------------------------------------|
+| *Ok, implentações futuras sobre o o projeto serão feitas.            |
+|Gostaria de receber dicas, melhorias...*                              |
+|                                                                      |
+|                                                                      |
+|                                                                      |
+|                                                                      |
+|                                                                      |
+|                                                                      |
+|                                                                      |
+------------------------------------------------------------------------
+
+
+
 

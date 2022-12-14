@@ -26,35 +26,21 @@ const getAll = (req, res) => {
         res.status(200).send(voluntarios)
     })
 }
-
 const updateVoluntario = async (req, res) => {
     try {
 
-        const authHeader = req.get('authorization')
-
-        if (!authHeader) {
-            return res.status(401).send('Precisa de autorização')
-        }
-
-        const token = authHeader.split(' ')[1]
-        await jwt.verify(token, SECRET, async function (error) {
-
-            if (authHeader ==token) {
-                return res.status(200).send('Acesso permitido')
-            }
-
-            const {nome,
-            contato,
-            vagasDisponiveis,
-            areaDeAtuação,
-            diasDaSemana,
-            email,
-            senha } = req.body
-            const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.id, {
-                nome, contato,  vagasDisponiveis, diasDaSemana, email, senha, areaDeAtuação
-            })
-            res.status(200).json(updatedVoluntario)
+         const {nome,
+        contato,
+        vagasDisponiveis,
+        prestaçãoDeServiço,
+         diasDaSemana,
+         email,
+         senha } = req.body
+        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.id, {
+         nome, contato,  vagasDisponiveis, diasDaSemana, email, senha, prestaçãoDeServiço
         })
+        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.id)
+            res.status(200).json(voluntarioUpdate)
 
     } catch (error) {
         console.error(error)
@@ -76,7 +62,8 @@ const deleteVoluntarioById = async (req, res) => {
 }
 
 const loginDoVoluntario = (req, res) => {
-    Voluntarios.findOne({ email: req.body.email }, function (error, voluntario) {
+    Voluntarios.findOne({
+         email: req.body.email }, function (error, voluntario) {
         
         if (!voluntario) {
             return res.status(404).send(`Não existe voluntario com o email ${req.body.email}`)
@@ -84,9 +71,9 @@ const loginDoVoluntario = (req, res) => {
 
         const senhaValida = bcrypt.compareSync(req.body.senha, voluntario.senha)
 
-        if (senhaValida===senhaValida) {
+        if (!senhaValida) {
 
-            //return res.status(403).send('Senha incorreta')
+            return res.status(403).send('Senha incorreta')
         }
 
         const token = jwt.sign({ email: req.body.email }, SECRET)

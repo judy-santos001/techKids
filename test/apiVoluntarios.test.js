@@ -1,11 +1,13 @@
 const request = require('supertest')
-const app = require('../src/app.js')
 
-//let elementId;
+const app =  require('../src/app')
+
 describe("API test", () => {
+   
     test("RotaGet/voluntarios", (done) => {
         request(app)
         .get("/voluntarios")
+        .expect("Content-Type", /json/)
         .expect(200)
         .expect((res) => {
             expect(res.body.lenght).not.toBe(0);
@@ -15,12 +17,11 @@ describe("API test", () => {
             return done();
         })
     });
-
-    let elementId
+    //let elementId =
     test("RotaPost/voluntario/create", (done) => {
         request(app)
         .post("/voluntario/create")
-        
+        .expect("Content-Type", /json/)
         .send({
             
          nome: "Ana Paula Gomes",
@@ -36,7 +37,7 @@ describe("API test", () => {
         .expect(201)
         .end((err, res) => {
             if(err) return done(err);
-            elementId = res.body.savedVoluntario._id;
+            elementId = res.body.savedVoluntario.id;
             return done();
         })
     });
@@ -44,8 +45,8 @@ describe("API test", () => {
     
         request(app)
         .patch(`/voluntario/atualizar/:idd${elementId}`)
-        
-        .send({_id: "dados atualizados"})
+        .expect("Content-Type", /json/)
+        .send({id: "dados atualizados"})
         .expect(200)
         .expect((res) => {
             console.log (res.body)
@@ -59,11 +60,11 @@ describe("API test", () => {
     test("RotaDelete/voluntario/deletar/:id", (done) => {
         request(app)
         .delete(`/delete/:id${elementId}`)
-        //.expect("Content-Type", /json/)
+        .expect("Content-Type", /json/)
         .expect(200)
         .expect((res) => {
             console.log(res.body)
-            expect(res.body.deleteVoluntarioById).toBe("excluido !");        
+            expect(res.body.deleteVoluntarioById).toBe("excluido com sucesso !");        
         })
         .end((err,res) => {
             if (err) return done(err);
