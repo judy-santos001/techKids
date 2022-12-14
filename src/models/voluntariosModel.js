@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const voluntariosSchema = new mongoose.Schema(
     {
     _id :{ type: mongoose.Schema.Types.ObjectId, default: mongoose.Types.ObjectId},
-    id : {type: String},
     nome: { type: String, required: true },
     contato: { type: Number, required:true},
     email: { type: String , required:true},

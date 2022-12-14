@@ -29,18 +29,20 @@ const getAll = (req, res) => {
 const updateVoluntario = async (req, res) => {
     try {
 
-        const {nome,
+        const {
+        nome,
         contato,
         vagasDisponiveis,
         prestaçãoDeServiço,
-         diasDaSemana,
-         email,
-         senha } = req.body
-        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.nome, {
+        diasDaSemana,
+        email,
+        senha } = req.body;
+        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.id, {
          nome, contato,  vagasDisponiveis, diasDaSemana, email, senha, prestaçãoDeServiço
-        })
-        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.nome)
-         return   res.status(200).json(voluntarioUpdate) 
+        }
+        );
+        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.id)
+        res.status(200).json(updateVoluntario) 
 
     } catch (error) {
         console.error(error)

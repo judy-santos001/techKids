@@ -47,7 +47,7 @@ além de rotas de pessoas  que gostariam de ser volutarias,  como para dar aulas
 |-----------------------------------|----------------------------------------------|
 | GET-/volutarios                   | Acessa  todos os vonlutarios                 |
 | POST-/voluntario/create           | Cadastra um novo voluntario                  |
-|PATCH-/voluntario/atualizar/:id    | Faz atualização por id                       |
+|PUT-/voluntario/atualizar/:id      | Faz atualização por id                       |
 | POST-/vonlutarios/login           | Login de vonlutarios                         |
 | DELETE-//delete/:id               | Exclui por id                                |
 ------------------------------------------------------------------------------------
