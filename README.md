@@ -46,7 +46,7 @@ além de está aprendendo se divertindo.**
 |-----------------------------------|----------------------------------------------|
 | GET-/volutarios                   | Acessa  todos os vonlutarios                 |
 | POST-/voluntario/create           | Cadastra um novo voluntario                  |
-|PUT-/voluntario/atualizar/:id      | Faz atualização por id                       |
+|PATCH-/voluntario/atualizar/:id      | Faz atualização por id                       |
 | POST-/vonlutarios/login           | Login de vonlutarios                         |
 | DELETE-//delete/:id               | Exclui por id                                |
 ------------------------------------------------------------------------------------
