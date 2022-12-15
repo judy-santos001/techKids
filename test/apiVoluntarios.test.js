@@ -2,6 +2,7 @@ const request = require('supertest')
 
 const app =  require('../src/app')
 
+let elementId ;
 describe("API test", () => {
    
     test("RotaGet/voluntarios", (done) => {
@@ -17,7 +18,7 @@ describe("API test", () => {
             return done();
         })
     });
-    //let elementId =
+    
     test("RotaPost/voluntario/create", (done) => {
         request(app)
         .post("/voluntario/create")
@@ -44,7 +45,7 @@ describe("API test", () => {
     test("Rota Patch/", (done) => {
     
         request(app)
-        .patch(`/voluntario/atualizar/:idd${elementId}`)
+        .patch(`/voluntario/atualizar/:id${elementId}`)
         .expect("Content-Type", /json/)
         .send({id: "dados atualizados"})
         .expect(200)

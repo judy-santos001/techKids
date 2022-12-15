@@ -45,14 +45,22 @@ const findComunidadetById = async (req, res) => {
     }
 }
 
-
 const updateComunidade = async (req, res) => {
     try {
-        const { CEP, estado, cidade, rua, bairro } = req.body
-        const updatedComunidade = await ComunidadesModel.findByIdAndUpdate(req.params.id, { CEP, estado, cidade, rua, bairro
+        const { CEP,
+            estado,
+            cidade, 
+            rua,
+            bairro } = req.body
+         await ComunidadesModel.findByIdAndUpdate(req.params.id, {
+            CEP,
+            estado,
+            cidade,
+            rua,
+            bairro
         })
         const comunidadeUpdate = await ComunidadesModel.findByIdAndUpdate(req.params.id)
-          return  res.status(200).json(comunidadeUpdate)
+        return  res.status(200).json(comunidadeUpdate)
 
     } catch (error) {
     console.error(error)

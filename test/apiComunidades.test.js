@@ -1,8 +1,8 @@
-const request= require('supertest')
+const  request= require('supertest')
 
-const app = require("../src/app")
-//let elementId;
+const  app = require("../src/app")
 
+let elementId ;
 describe("API test", () => {
     test("RotaGet/comunidades", (done) => {
         request(app)
@@ -17,7 +17,7 @@ describe("API test", () => {
             return done();
         })
     });
-    //let elementId
+    
     test("RotaPost/comunidade/create", (done) => {
         request(app)
         .post("/comunidade/create")
@@ -30,17 +30,18 @@ describe("API test", () => {
             bairro:"vila velha"
 
         })
-        
+
         .expect(201)
         .end((err, res) => {
             if(err) return done(err);
-            elementId = res.body.savedConsole.id;
+            elementId = res.body.savedConsole._id;
             return done();
         })
     });
+    
     test("Rota Patch/console/update/:id", (done) => {
         request(app)
-        .patch(`/comunidade/atualizar/:id${elementId}`)
+        .patch(`/comunidade/atualizar/:id${_d}`)
        
         .send({id: "dados atualizados"})
         .expect(200)
@@ -53,6 +54,7 @@ describe("API test", () => {
             return done();
         })
     })
+    
     test("RotaDelete/comunidade/delete/:id", (done) => {
         request(app)
         .delete(`/comunidade/deletar/:id${elementId}`)

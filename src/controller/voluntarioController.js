@@ -36,13 +36,21 @@ const updateVoluntario = async (req, res) => {
         prestaçãoDeServiço,
         diasDaSemana,
         email,
-        senha } = req.body;
-        const updatedVoluntario = await Voluntarios.findByIdAndUpdate(req.params.id, {
-         nome, contato,  vagasDisponiveis, diasDaSemana, email, senha, prestaçãoDeServiço
+        senha } = req.body
+
+       await  Voluntarios.findByIdAndUpdate(req.params.id, {
+        nome,
+        contato,  
+        vagasDisponiveis,
+        prestaçãoDeServiço,
+        diasDaSemana,
+        email,
+        senha,
         }
         );
-        const voluntarioUpdate =await Voluntarios.findByIdAndUpdate(req.params.id)
-        res.status(200).json(updateVoluntario) 
+        const voluntarioUpdate= await Voluntarios.findById(req.params.id)
+    
+       return res.status(200).json(voluntarioUpdate)
 
     } catch (error) {
         console.error(error)
